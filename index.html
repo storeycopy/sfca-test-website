@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Figure Copy Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Base ── */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        :root {
+            --gold: #C5A55A;
+            --gold-light: #D4BA7A;
+            --gold-dark: #A8893E;
+            --dark-bg: #0F0D0A;
+            --dark-card: #1A1714;
+            --dark-elevated: #221F1A;
+            --warm-white: #F5F0E8;
+            --gray: #9A9590;
+            --white: #FFFFFF;
+            --glow-gold: rgba(197, 165, 90, 0.3);
+        }
+
+        ::selection {
+            background: rgba(197, 165, 90, 0.5);
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 99px;
+        }
+        ::-webkit-scrollbar-track {
+            background: inherit;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* ── Typography ── */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', system-ui, sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ── Container ── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(15, 13, 10, 0.85);
+            border-bottom: 1px solid rgba(197, 165, 90, 0.08);
+            transition: background 0.3s ease;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .nav-logo-text {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-ghost {
+            padding: 8px 20px;
+            border: 1px solid rgba(197, 165, 90, 0.3);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--gold-light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-ghost:hover,
+        .btn-ghost:focus-visible {
+            border-color: var(--gold);
+            background: rgba(197, 165, 90, 0.06);
+        }
+
+        .btn-ghost:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #0F0D0A;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.15s ease, opacity 0.2s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(197, 165, 90, 0.25), 0 0 40px rgba(197, 165, 90, 0.08);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            opacity: 0.9;
+            box-shadow: 0 2px 20px rgba(197, 165, 90, 0.35), 0 0 60px rgba(197, 165, 90, 0.12);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-lg {
+            padding: 14px 36px;
+            font-size: 16px;
+            border-radius: 12px;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 24px 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* Cosmic orb glow — main */
+        .hero-orb {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at center, rgba(197, 165, 90, 0.22) 0%, transparent 40%),
+                radial-gradient(circle at center, rgba(197, 165, 90, 0.10) 0%, transparent 55%),
+                radial-gradient(circle at center, rgba(168, 137, 62, 0.06) 0%, transparent 70%);
+            filter: blur(50px);
+            animation: orbPulse 8s ease-in-out infinite;
+        }
+
+        .hero-orb-inner {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(197, 165, 90, 0.3) 0%, rgba(197, 165, 90, 0.12) 40%, transparent 70%);
+            filter: blur(25px);
+            animation: orbPulse 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes orbPulse {
+            0%, 100% { opacity: 0.7; transform: translate(-50%, -30%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -30%) scale(1.06); }
+        }
+
+        /* Horizontal light streak */
+        .hero-streak {
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, rgba(197, 165, 90, 0.2) 20%, rgba(197, 165, 90, 0.5) 50%, rgba(197, 165, 90, 0.2) 80%, transparent 100%);
+            box-shadow: 0 0 60px 12px rgba(197, 165, 90, 0.08), 0 0 120px 20px rgba(197, 165, 90, 0.03);
+        }
+
+        /* Lens flare ring */
+        .hero-ring {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 165, 90, 0.08);
+            box-shadow: 0 0 60px 10px rgba(197, 165, 90, 0.04), inset 0 0 60px 10px rgba(197, 165, 90, 0.03);
+            animation: ringPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% { opacity: 0.4; transform: translate(-50%, -30%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -30%) scale(1.08); }
+        }
+
+        /* Star field */
+        .hero-stars {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 80% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 70% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 50% 50%, rgba(197,165,90,0.6) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 85% 35%, rgba(255,255,255,0.3) 0%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border: 1px solid rgba(197, 165, 90, 0.2);
+            border-radius: 100px;
+            background: rgba(197, 165, 90, 0.06);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--gold-light);
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            line-height: 80px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ── Section shared ── */
+        .section {
+            position: relative;
+            padding: 120px 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-size: 48px;
+            line-height: 56px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 17px;
+            color: var(--gray);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+
+        /* ── Divider ── */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(197, 165, 90, 0.15) 50%, transparent 100%);
+        }
+
+        /* ── Features grid (Notes with AI / Your brain's best environment) ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        /* ── Glow card wrapper (ports GlowingEffect component) ── */
+        .glow-card-wrapper {
+            position: relative;
+            border-radius: 1.5rem;
+            padding: 3px;
+        }
+
+        /* Static idle border — visible when glow is inactive */
+        .glow-card-wrapper > .glow-border-idle {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 0.75px solid rgba(197, 165, 90, 0.1);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Glow effect container — tracks mouse, holds the animated gradient */
+        .glow-card-wrapper > .glow-effect {
+            --blur: 0px;
+            --spread: 40;
+            --start: 0;
+            --active: 0;
+            --border-w: 3px;
+            --gradient:
+                radial-gradient(circle, #D4BA7A 10%, #D4BA7A00 20%),
+                radial-gradient(circle at 40% 40%, #C5A55A 5%, #C5A55A00 15%),
+                radial-gradient(circle at 60% 60%, #A8893E 10%, #A8893E00 20%),
+                radial-gradient(circle at 40% 60%, #F5F0E8 10%, #F5F0E800 20%),
+                repeating-conic-gradient(
+                    from 236.84deg at 50% 50%,
+                    #D4BA7A 0%,
+                    #C5A55A 5%,
+                    #A8893E 10%,
+                    #F5F0E8 15%,
+                    #D4BA7A 20%
+                );
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .glow-card-wrapper > .glow-effect > .glow-sweep {
+            border-radius: inherit;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glow-card-wrapper > .glow-effect > .glow-sweep::after {
+            content: "";
+            position: absolute;
+            inset: calc(-1 * var(--border-w));
+            border-radius: inherit;
+            border: var(--border-w) solid transparent;
+            background: var(--gradient);
+            background-attachment: fixed;
+            opacity: var(--active);
+            transition: opacity 0.3s ease;
+            -webkit-mask-clip: padding-box, border-box;
+            mask-clip: padding-box, border-box;
+            -webkit-mask-composite: xor;
+            mask-composite: intersect;
+            -webkit-mask-image:
+                linear-gradient(#0000, #0000),
+                conic-gradient(
+                    from calc((var(--start) - var(--spread)) * 1deg),
+                    #00000000 0deg,
+                    #fff,
+                    #00000000 calc(var(--spread) * 2deg)
+                );
+            mask-image:
+                linear-gradient(#0000, #0000),
+                conic-gradient(
+                    from calc((var(--start) - var(--spread)) * 1deg),
+                    #00000000 0deg,
+                    #fff,
+                    #00000000 calc(var(--spread) * 2deg)
+                );
+        }
+
+        .feature-card {
+            position: relative;
+            padding: 48px 40px;
+            border-radius: 1.25rem;
+            background: linear-gradient(160deg, rgba(26, 23, 20, 0.95) 0%, rgba(20, 18, 14, 0.85) 100%);
+            border: 0.75px solid rgba(197, 165, 90, 0.06);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            z-index: 3;
+        }
+
+        .glow-card-wrapper:hover .feature-card {
+            transform: translateY(-2px);
+        }
+
+        .feature-card-glow {
+            position: absolute;
+            top: -60%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(197, 165, 90, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .feature-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(197, 165, 90, 0.15) 0%, rgba(197, 165, 90, 0.05) 100%);
+            border: 1px solid rgba(197, 165, 90, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .feature-card-full {
+            grid-column: 1 / -1;
+        }
+
+        /* ── Showcase section (image + text side by side) ── */
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .showcase-visual {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--dark-card);
+            border: 1px solid rgba(197, 165, 90, 0.08);
+        }
+
+        .showcase-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: luminosity;
+            opacity: 0.7;
+        }
+
+        .showcase-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 13, 10, 0.6) 0%, transparent 60%);
+        }
+
+        .showcase-visual-glow {
+            position: absolute;
+            bottom: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 60%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(197, 165, 90, 0.12) 0%, transparent 70%);
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .showcase-text h2 {
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .showcase-text p {
+            color: var(--gray);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        /* ── Stats / Social Proof ── */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(197, 165, 90, 0.1);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: var(--gray);
+        }
+
+        /* ── Integrations / Logos ── */
+        .logos-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .logos-label {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            opacity: 0.4;
+        }
+
+        .logos-grid span {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--white);
+        }
+
+        /* ── Testimonial ── */
+        .testimonial-section {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .testimonial-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 24px;
+            background: linear-gradient(160deg, rgba(26, 23, 20, 0.6) 0%, rgba(20, 18, 14, 0.4) 100%);
+            border: 1px solid rgba(197, 165, 90, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card-glow {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(197, 165, 90, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .testimonial-quote {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--warm-white);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .testimonial-role {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        /* ── CTA Section ── */
+        .cta-section {
+            position: relative;
+            padding: 120px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta-orb {
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(197, 165, 90, 0.12) 0%, rgba(197, 165, 90, 0.05) 40%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            border-top: 1px solid rgba(197, 165, 90, 0.08);
+            padding: 60px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 16px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover,
+        .footer-col a:focus-visible {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ── Noise texture overlay ── */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-4 { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 52px;
+                line-height: 58px;
+            }
+            .section-title {
+                font-size: 36px;
+                line-height: 42px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-number {
+                font-size: 40px;
+            }
+            .cta-section h2 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+                line-height: 44px;
+            }
+            .hero {
+                padding: 120px 20px 60px;
+            }
+            .section {
+                padding: 80px 0;
+            }
+            .section-title {
+                font-size: 30px;
+                line-height: 36px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .stats-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .stat-item::after {
+                display: none;
+            }
+            .showcase-text h2 {
+                font-size: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .cta-section h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 30px;
+                line-height: 36px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="brand_assets/sfca_logo_transparent.png" alt="SFCA Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#method">Method</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn-ghost">Log In</a>
+                <a href="#" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-stars"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb-inner"></div>
+            <div class="hero-ring"></div>
+            <div class="hero-streak"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <span class="hero-badge-dot"></span>
+                Now enrolling for 2026
+            </div>
+            <h1 class="gradient-text fade-in fade-in-delay-1">Write better with<br>Six-Figure Copy Academy</h1>
+            <p class="hero-subtitle fade-in fade-in-delay-2">Master the art of persuasive copywriting. Learn proven frameworks that turn words into revenue — backed by real results from real students.</p>
+            <div class="hero-buttons fade-in fade-in-delay-3">
+                <a href="#" class="btn-primary btn-lg">Start Learning Today</a>
+                <a href="#" class="btn-ghost btn-lg">Watch Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">What You Get</span>
+            </div>
+            <h2 class="section-title gradient-text">Write with an expert's instinct</h2>
+            <p class="section-desc">Our curriculum gives you the frameworks, templates, and feedback loops to write copy that converts — every single time.</p>
+
+            <div class="features-grid">
+                <div class="glow-card-wrapper">
+                    <div class="glow-border-idle"></div>
+                    <div class="glow-effect"><div class="glow-sweep"></div></div>
+                    <div class="feature-card">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-card-icon">&#9998;</div>
+                        <h3 class="gradient-text">Proven Copy Frameworks</h3>
+                        <p>Battle-tested templates and structures used by top-earning copywriters. No guesswork — just plug in your offer and write with confidence.</p>
+                    </div>
+                </div>
+                <div class="glow-card-wrapper">
+                    <div class="glow-border-idle"></div>
+                    <div class="glow-effect"><div class="glow-sweep"></div></div>
+                    <div class="feature-card">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-card-icon">&#9733;</div>
+                        <h3 class="gradient-text">Expert-Led Training</h3>
+                        <p>Learn directly from six-figure copywriters through step-by-step video lessons, live workshops, and personalized feedback on your work.</p>
+                    </div>
+                </div>
+                <div class="glow-card-wrapper">
+                    <div class="glow-border-idle"></div>
+                    <div class="glow-effect"><div class="glow-sweep"></div></div>
+                    <div class="feature-card">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-card-icon">&#9775;</div>
+                        <h3 class="gradient-text">AI-Powered Writing Tools</h3>
+                        <p>Leverage our custom AI assistant trained on high-converting copy. Get instant headline variations, hook suggestions, and copy audits.</p>
+                    </div>
+                </div>
+                <div class="glow-card-wrapper">
+                    <div class="glow-border-idle"></div>
+                    <div class="glow-effect"><div class="glow-sweep"></div></div>
+                    <div class="feature-card">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-card-icon">&#10003;</div>
+                        <h3 class="gradient-text">Client Acquisition System</h3>
+                        <p>A complete system for finding, pitching, and closing high-paying clients. Go from student to earning freelancer in weeks, not years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Showcase / Method Section -->
+    <section class="section" id="method">
+        <div class="container">
+            <div class="showcase">
+                <div class="showcase-visual">
+                    <img src="https://placehold.co/800x600/1A1714/2A2520?text=SFCA+Dashboard" alt="SFCA Platform Preview">
+                    <div class="showcase-visual-glow"></div>
+                </div>
+                <div class="showcase-text">
+                    <span class="section-label">Your Brain's Best Environment</span>
+                    <h2 class="gradient-text">Give your ideas the structure they deserve</h2>
+                    <p>Our learning platform is designed for focus. Distraction-free modules, progress tracking, and a personal copy vault to store your best work — all in one place.</p>
+                    <a href="#" class="btn-primary">Explore the Platform</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Reverse Showcase -->
+    <section class="section">
+        <div class="container">
+            <div class="showcase" style="direction: rtl;">
+                <div class="showcase-visual" style="direction: ltr;">
+                    <img src="https://placehold.co/800x600/1A1714/2A2520?text=Copy+Swipe+File" alt="Swipe File Preview">
+                    <div class="showcase-visual-glow"></div>
+                </div>
+                <div class="showcase-text" style="direction: ltr;">
+                    <span class="section-label">Never Lose Key Information</span>
+                    <h2 class="gradient-text">A swipe file that works for you</h2>
+                    <p>Build a personal library of winning headlines, hooks, and frameworks. Our smart swipe file organizes and resurfaces the right reference exactly when you need it.</p>
+                    <a href="#" class="btn-primary">See How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Stats Section -->
+    <section class="section" id="results">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Real Results</span>
+            </div>
+            <h2 class="section-title gradient-text">We make getting results simple</h2>
+            <p class="section-desc">Our students don't just learn — they earn. Here's the proof.</p>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number gold-gradient-text">$10M+</div>
+                    <div class="stat-label">Revenue generated by students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold-gradient-text">2,500+</div>
+                    <div class="stat-label">Students enrolled worldwide</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold-gradient-text">94%</div>
+                    <div class="stat-label">Land a client within 90 days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Logos / Social Proof -->
+    <section class="logos-section">
+        <div class="container">
+            <p class="logos-label">Trusted by writers at companies like</p>
+            <div class="logos-grid">
+                <span>Shopify</span>
+                <span>ConvertKit</span>
+                <span>HubSpot</span>
+                <span>ClickFunnels</span>
+                <span>Kajabi</span>
+                <span>Gumroad</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Testimonial Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Student Stories</span>
+            </div>
+            <h2 class="section-title gradient-text">Words from our community</h2>
+            <p class="section-desc">Hear from the copywriters who transformed their careers.</p>
+
+            <div class="testimonial-card">
+                <div class="testimonial-card-glow"></div>
+                <p class="testimonial-quote">"I went from struggling to write a single email to landing a $5,000/month retainer client in just 8 weeks. SFCA didn't just teach me copywriting — it gave me a career."</p>
+                <p class="testimonial-author">Sarah M.</p>
+                <p class="testimonial-role">Freelance Copywriter &middot; Former Teacher</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Additional Features / Use Cases -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Works Across All Platforms</span>
+            </div>
+            <h2 class="section-title gradient-text">Write across every channel</h2>
+            <p class="section-desc">Learn how to take great copy from emails to landing pages to ads and beyond.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-card-icon">&#9993;</div>
+                    <h3 class="gradient-text">Email Sequences</h3>
+                    <p>Craft welcome series, launch sequences, and nurture campaigns that turn subscribers into buyers on autopilot.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-card-icon">&#9881;</div>
+                    <h3 class="gradient-text">Landing Pages</h3>
+                    <p>Build high-converting landing pages with proven structures — from headline to CTA, every element optimized.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-card-icon">&#9889;</div>
+                    <h3 class="gradient-text">Social & Ads</h3>
+                    <p>Write scroll-stopping social media copy and paid ad campaigns that drive clicks and conversions at scale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-card-icon">&#9997;</div>
+                    <h3 class="gradient-text">Sales Pages</h3>
+                    <p>Long-form sales pages that do the selling for you — complete with story arcs, objection handling, and irresistible offers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-orb"></div>
+        <div class="container" style="position: relative;">
+            <h2 class="gradient-text">Write better with<br>Six-Figure Copy Academy</h2>
+            <p>Join thousands of copywriters who turned their words into six-figure careers. Your transformation starts today.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn-primary btn-lg">Claim Your Spot</a>
+                <a href="#" class="btn-ghost btn-lg">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="brand_assets/sfca_logo_transparent.png" alt="SFCA" style="height: 40px; width: auto;">
+                    <p>The premier copywriting academy for aspiring six-figure writers. Master persuasion. Land clients. Build a career you love.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Academy</h4>
+                    <ul>
+                        <li><a href="#">Curriculum</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Student Results</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Free Templates</a></li>
+                        <li><a href="#">Swipe File</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Six-Figure Copy Academy. All rights reserved.</span>
+                <span>Built with purpose.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll-triggered fade-in -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.glow-card-wrapper, .showcase, .testimonial-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- GlowingEffect — vanilla port (mouse-tracking conic gradient border) -->
+    <script>
+    (function () {
+        const PROXIMITY = 64;
+        const SPREAD = 40;
+        const INACTIVE_ZONE = 0.01;
+        const DURATION = 2;          // seconds — matches React component's movementDuration
+        const EASE = [0.16, 1, 0.3, 1]; // cubic-bezier control points from motion/react
+
+        const wrappers = document.querySelectorAll('.glow-card-wrapper');
+        const glowEls = [];
+
+        wrappers.forEach(w => {
+            const el = w.querySelector('.glow-effect');
+            if (el) glowEls.push(el);
+        });
+
+        const lastPos = { x: 0, y: 0 };
+
+        // Cubic-bezier evaluation (decasteljau for 1D)
+        function cubicBezier(t, p1, p2, p3, p4) {
+            const u = 1 - t;
+            return 3 * u * u * t * p1 + 3 * u * t * t * p3 + t * t * t;
+        }
+        function bezierValue(t) {
+            return cubicBezier(t, EASE[0], EASE[1], EASE[2], EASE[3]);
+        }
+
+        // Per-element animation state
+        const state = new Map();
+        glowEls.forEach(el => state.set(el, { raf: 0 }));
+
+        function animateAngle(el, from, to) {
+            const s = state.get(el);
+            if (s.raf) cancelAnimationFrame(s.raf);
+
+            const startTime = performance.now();
+            const durationMs = DURATION * 1000;
+
+            function tick(now) {
+                const t = Math.min((now - startTime) / durationMs, 1);
+                // Use the bezier y-value for eased progress
+                const eased = bezierValue(t);
+                const val = from + (to - from) * eased;
+                el.style.setProperty('--start', String(val));
+
+                if (t < 1) {
+                    s.raf = requestAnimationFrame(tick);
+                } else {
+                    s.raf = 0;
+                }
+            }
+            s.raf = requestAnimationFrame(tick);
+        }
+
+        function handleMove(e) {
+            const mx = e ? (e.clientX ?? e.x) : lastPos.x;
+            const my = e ? (e.clientY ?? e.y) : lastPos.y;
+            if (e) { lastPos.x = mx; lastPos.y = my; }
+
+            glowEls.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const cx = rect.left + rect.width * 0.5;
+                const cy = rect.top + rect.height * 0.5;
+
+                // Inactive zone check
+                const dist = Math.hypot(mx - cx, my - cy);
+                const inactiveR = 0.5 * Math.min(rect.width, rect.height) * INACTIVE_ZONE;
+                if (dist < inactiveR) {
+                    el.style.setProperty('--active', '0');
+                    return;
+                }
+
+                // Proximity check
+                const isActive =
+                    mx > rect.left - PROXIMITY &&
+                    mx < rect.right + PROXIMITY &&
+                    my > rect.top - PROXIMITY &&
+                    my < rect.bottom + PROXIMITY;
+
+                el.style.setProperty('--active', isActive ? '1' : '0');
+                if (!isActive) return;
+
+                // Angle from center to cursor
+                const currentAngle = parseFloat(el.style.getPropertyValue('--start')) || 0;
+                let targetAngle = (180 * Math.atan2(my - cy, mx - cx)) / Math.PI + 90;
+
+                // Shortest path normalization
+                const diff = ((targetAngle - currentAngle + 180) % 360) - 180;
+                const newAngle = currentAngle + diff;
+
+                animateAngle(el, currentAngle, newAngle);
+            });
+        }
+
+        document.body.addEventListener('pointermove', handleMove, { passive: true });
+        window.addEventListener('scroll', function () { handleMove(null); }, { passive: true });
+    })();
+    </script>
+
+</body>
+</html>
