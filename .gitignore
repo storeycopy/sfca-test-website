@@ -1,4 +1,5 @@
 node_modules/
 temporary screenshots/
-*.png
+temporary screenshots/*.png
+screencapture-*.png
 .DS_Store
