@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Now enrolling for 2026",
-    "heading": "Write better with Six-Figure Copy Academy Today",
+    "heading": "Write better with Six-Figure Copy Academy NOW",
     "subheading": "Master the art of persuasive copywriting. Learn proven frameworks that turn words into revenue — backed by real results from real students in 2026.",
     "primaryButtonText": "Start Learning Now",
     "primaryButtonLink": "#",
@@ -41,7 +41,7 @@
     "description": "Our learning platform is designed for focus. Distraction-free modules, progress tracking, and a personal copy vault to store your best work — all in one place.",
     "buttonText": "Explore the Platform",
     "buttonLink": "#",
-    "image": "https://placehold.co/800x600/1A1714/2A2520?text=SFCA+Dashboard",
+    "image": "/uploadshttps://placehold.co/800x600/1A1714/2A2520?text=SFCA+Dashboard",
     "imageAlt": "SFCA Platform Preview"
   },
   "showcase2": {
@@ -50,7 +50,7 @@
     "description": "Build a personal library of winning headlines, hooks, and frameworks. Our smart swipe file organizes and resurfaces the right reference exactly when you need it.",
     "buttonText": "See How It Works",
     "buttonLink": "#",
-    "image": "https://placehold.co/800x600/1A1714/2A2520?text=Copy+Swipe+File",
+    "image": "/uploadshttps://placehold.co/800x600/1A1714/2A2520?text=Copy+Swipe+File",
     "imageAlt": "Swipe File Preview"
   },
   "stats": {
