@@ -1,5 +1,8 @@
 node_modules/
+/.next/
+/out/
 temporary screenshots/
 temporary screenshots/*.png
 screencapture-*.png
 .DS_Store
+.env*.local

@@ -1,0 +1,97 @@
+fragment PageParts on Page {
+  __typename
+  hero {
+    __typename
+    badge
+    heading
+    subheading
+    primaryButtonText
+    primaryButtonLink
+    secondaryButtonText
+    secondaryButtonLink
+  }
+  features {
+    __typename
+    label
+    title
+    description
+    items {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  showcase1 {
+    __typename
+    label
+    title
+    description
+    buttonText
+    buttonLink
+    image
+    imageAlt
+  }
+  showcase2 {
+    __typename
+    label
+    title
+    description
+    buttonText
+    buttonLink
+    image
+    imageAlt
+  }
+  stats {
+    __typename
+    label
+    title
+    description
+    items {
+      __typename
+      number
+      label
+    }
+  }
+  logos {
+    __typename
+    label
+    companies
+  }
+  testimonial {
+    __typename
+    label
+    title
+    description
+    quote
+    author
+    role
+  }
+  additionalFeatures {
+    __typename
+    label
+    title
+    description
+    items {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  cta {
+    __typename
+    heading
+    description
+    primaryButtonText
+    primaryButtonLink
+    secondaryButtonText
+    secondaryButtonLink
+  }
+  footer {
+    __typename
+    description
+    copyright
+    tagline
+  }
+}
